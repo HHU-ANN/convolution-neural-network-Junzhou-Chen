@@ -1,7 +1,7 @@
 *.pyc
 __pycache__/
 #*.jpg
-_03_Convolution_Neural_Network/test_03.py
+_03_Convolution_Neural_Network/test_003.py
 venv/
 data/exp03/
 wandb/

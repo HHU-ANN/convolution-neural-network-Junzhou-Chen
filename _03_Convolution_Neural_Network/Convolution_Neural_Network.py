@@ -13,6 +13,12 @@ import torchvision
 
 from torch.utils.data import DataLoader
     
+if torch.cuda.is_available():
+    device = torch.device("cuda:0")
+    print("使用GPU进行训练")
+else:
+    device = torch.device("cpu")
+    print("使用cpu进行训练")
 
 # todo Bottleneck
 class Bottleneck(nn.Module):
@@ -158,6 +164,6 @@ def main():
     model = resnet50()  # 若有参数则传入参数
     current_dir = os.path.dirname(os.path.abspath(__file__))
     parent_dir = os.path.dirname(current_dir)
-    model.load_state_dict(torch.load(parent_dir + '/pth/best_model.pth'))
+    model.load_state_dict(torch.load(parent_dir + '/pth/model.pth', map_location='cpu'))
     return model
     

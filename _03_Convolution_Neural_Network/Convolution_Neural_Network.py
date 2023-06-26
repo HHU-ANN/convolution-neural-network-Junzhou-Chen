@@ -161,7 +161,7 @@ def read_data():
     return dataset_train, dataset_val, data_loader_train, data_loader_val
 
 def main():
-    model = resnet50()  # 若有参数则传入参数
+    model = resnet50()  # 若有参数则传入
     current_dir = os.path.dirname(os.path.abspath(__file__))
     parent_dir = os.path.dirname(current_dir)
     model.load_state_dict(torch.load(parent_dir + '/pth/model.pth', map_location='cpu'))

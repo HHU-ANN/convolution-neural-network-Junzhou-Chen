@@ -64,3 +64,5 @@ def test8():
 def test9():
     label, pred = test()
     assert label == pred
+
+
